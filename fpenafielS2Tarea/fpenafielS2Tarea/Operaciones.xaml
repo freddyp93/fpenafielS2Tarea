@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fpenafielS2Tarea.Operaciones">
+    <ContentPage.Content>
+        <ScrollView> <!--habilito el scroll-->
+        <StackLayout>
+            <Label Text="SISTEMA DE CALIFICACIONES" FontSize="20" TextColor="Blue" HorizontalTextAlignment="Center"/>
+            <!--cargo imagen desde internet-->
+                <Image Source="https://sige.uisrael.edu.ec/imagenes/Logo/Logo%20UISRAEL%20vertical%202020.png" WidthRequest="150" HeightRequest="200"/>
+
+                <Label Text="Bienvenido" FontSize="20" TextColor="blue" HorizontalTextAlignment="Center"/>
+                
+                <Label Text="CALIFICACIONES PRIMER PARCIAL" FontSize="15" TextColor="BLUE" HorizontalTextAlignment="Center"/>
+                
+                <!--creo un grid-->
+                <Grid>
+                    <!--defino el numero de filas del grid-->
+                    <Grid.RowDefinitions>
+                        <!--dos filas-->
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--defino las columnas del grid-->
+                    <Grid.ColumnDefinitions>
+                        <!--dos columnas del grid-->
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Ubico los elementos dentro del grid-->
+                    
+                    <!--DATOS PARA INGRESAR PRIMER PARCIAL-->
+                    <Label Text="Nota Seguimiento 1:" FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                    <!--caja de texto-->
+                    <Entry x:Name="txtNotaS1" Placeholder="Ingrese nota seguimiento 1" FontSize="15" Grid.Row="0" Grid.Column="1"/>
+
+                    <Label Text="Nota Examen 1: " FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+                    <Entry x:Name="txtNotaE1" Placeholder="Ingrese nota examen 1" FontSize="15" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+
+                <Label Text="CALIFICACIONES SEGUNDO PARCIAL" FontSize="15" TextColor="Blue" HorizontalTextAlignment="Center"/>
+                <!--creo un nuevo grid-->
+                <Grid>
+                    <!--defino filas del grid-->
+                    <Grid.RowDefinitions>
+                        <!--dos filas-->
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--defino columnas del grid-->
+                    <Grid.ColumnDefinitions>
+                        <!--Dos columnas del grid-->
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Elementos del Grid-->
+                    <!--Datos para ingresar segundo parcial-->
+                    <Label Text="Nota Seguimiento 2: " FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                    <Entry x:Name="txtNotaS2" Placeholder="Ingrese nota seguimiento 2" FontSize="15" Grid.Row="0" Grid.Column="1"/>
+
+                    <Label Text="Nota Examen 2:" FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+                    <Entry x:Name="txtNotaE2" Placeholder="Ingrese nota examen 2" FontSize="15" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+
+                <Label Text="CALIFICACIONES OBTENIDAS" FontSize="15" TextColor="Blue" HorizontalTextAlignment="Center"/>
+                <Grid>
+                    <!--defino las filas-->
+                    <Grid.RowDefinitions>
+                        <!--dos filas-->
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--Defino las columnas-->
+                    <Grid.ColumnDefinitions>
+                        <!--dos columnas-->
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Elementos del grid-->
+                    <Label Text="NOTA PARCIAL 1: " FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                    <!--recibe datos de la suma de  Nota Seguimiento 1 y Examen 1-->
+                    <Label x:Name="lblNotaP1" FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+
+                    <Label Text="NOTA PARCIAL 2: " FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                    <!--recibe datos de la suma de Nota Seguimiento2 y Examen2-->
+                    <Label x:Name="lblNotaP2" FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <!--dos filas-->
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--dos columnas del grid-->
+                    <Grid.ColumnDefinitions>
+                        <!--dos columnas-->
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--contenido del grid-->
+                    <!--nota final-->
+                    <Label Text="NOTA FINAL:" FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                    <!--caja de texto donde se guarda resultado-->
+                    <Entry x:Name="txtNotaFinal" FontSize="15" TextColor="blue" IsReadOnly="True" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+                    <!--estado de aprobado, suspenso o reprobado-->
+                    <Label Text="ESTADO:" FontSize="15" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                    <Entry x:Name="txtEstado" FontSize="15" TextColor="Blue" IsReadOnly="True" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+
+                    <!--boton para calcular la calificacion-->
+                    <Button x:Name="btnCalcular" Text="CALCULAR" Clicked="btnCalcular_Clicked" Grid.Row="2" Grid.Column="0"/>
+                    <Button x:Name="btnLimpiar" Text="LIMPIAR" Clicked="btnLimpiar_Clicked" Grid.Row="2" Grid.Column="1"/>
+
+                </Grid>
+ 
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
