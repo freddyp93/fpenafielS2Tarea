@@ -9,8 +9,8 @@ namespace fpenafielS2Tarea
         public App()
         {
             InitializeComponent();
-
-            MainPage = new Operaciones(); //Constructor
+            //Habilito la navegacion entre pantallas
+            MainPage = new NavigationPage(new login()); //Operaciones(); //Constructor
         }
 
         protected override void OnStart()

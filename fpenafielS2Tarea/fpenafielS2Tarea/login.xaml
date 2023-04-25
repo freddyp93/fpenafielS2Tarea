@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fpenafielS2Tarea.login">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--agrego una imagen-->
+            <Image Source="https://www.uisrael.edu.ec/wp-content/uploads/2023/01/logo-uisrael@2x-e1674848533171.png" WidthRequest="100" HeightRequest="80"/>
+            <Label Text="BIENVENIDO AL SISTEMA DE CALIFICACIONES DE LA UNIVERSIDAD ISRAEL" FontSize="18" HorizontalTextAlignment="Center" TextColor="Blue"/>
+            
+            <!--grid para usuario y contrasenia-->
+            <Grid>
+                <!--defino las filas-->
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <!--defino las columnas-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <!--elementos del grid-->
+                <Image Source="https://cdn-icons-png.flaticon.com/512/16/16363.png" WidthRequest="45" HeightRequest="35" Grid.Row="0" Grid.Column="0"/>
+                <Entry x:Name="txtUsuario" Placeholder="INGRESE USUARIO" FontSize="15" Grid.Row="0" Grid.Column="1"/>
+
+                <Image Source="https://www.buscopng.com/wp-content/uploads/2020/09/Llave.png" WidthRequest="45" HeightRequest="35" Grid.Row="1" Grid.Column="0"/>
+                <Entry x:Name="txtPassword" Placeholder="INGRESE CONTRASEÑA" FontSize="15" IsPassword="True" Grid.Row="1" Grid.Column="1"/>
+
+            </Grid>
+            
+           <!--boton para ingresar-->
+            <Button x:Name="btnIngresar" Text="INGRESAR" FontSize="15" FontAttributes="Bold" BackgroundColor="CornflowerBlue" TextColor="WhiteSmoke" Clicked="btnIngresar_Clicked"/>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
